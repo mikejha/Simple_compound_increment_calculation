@@ -1,0 +1,33 @@
+declare x number;
+        y number;
+        m number;
+        n number;
+--For compound increase at 7.5%:
+begin
+   x := 100000;
+   y :=  15;
+   dbms_output.put_line('PNB 7.5% Compound increase for 1st year is Rs ' ||x);
+  for i in 1..y
+    loop
+x := x + x*7.5/100;
+dbms_output.put_line('PNB 7.5% Compound increase for '||(i+1)||' year is Rs '||x); 
+   end loop;
+--dbms_output.put_line(x); 
+
+
+--For simple increase at 11%:
+
+begin
+  x := 100000;
+   y :=  15;
+   dbms_output.put_line('MF 10% simple increase for 1st year is Rs ' ||x);
+  for i in 1..y
+    loop
+--x := x + (x*11/100)*y;
+m:= (x*11/100)*i;
+n := x + m;
+dbms_output.put_line('MF 10% simple increase for '||(i+1)||' year is Rs '||n); 
+   end loop;
+--dbms_output.put_line(x); 
+ end;
+  end;
